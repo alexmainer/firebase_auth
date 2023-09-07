@@ -82,7 +82,7 @@ fun RegisterScreen(controller:NavHostController) {
         Spacer(modifier= Modifier.height(19.dp))
 
         OutlinedTextField(
-            value = pass ,
+            value = confpass ,
             label = { Text(text = "Confirm Password")},
             keyboardOptions = KeyboardOptions.Default.copy(imeAction = ImeAction.Next),
             modifier = Modifier

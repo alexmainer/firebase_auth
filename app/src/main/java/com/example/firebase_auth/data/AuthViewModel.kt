@@ -3,6 +3,7 @@ package com.example.firebase_auth.data
 import android.content.Context
 import android.widget.Toast
 import androidx.navigation.NavHostController
+import com.example.firebase_auth.navigation.ROUTE_HOME
 import com.example.firebase_auth.navigation.ROUTE_LOGIN
 import com.example.firebase_auth.navigation.ROUTE_REGISTER
 import com.google.firebase.auth.FirebaseAuth
@@ -45,10 +46,11 @@ class AuthViewModel(var controller:NavHostController,var context:Context) {
         mAuth.signInWithEmailAndPassword(email,pass).addOnCompleteListener {
             if (it.isSuccessful){
                 Toast.makeText(context,"LogIn successful",Toast.LENGTH_LONG).show()
-//                controller.navigate(ROUTE_REGISTER)...TO TAKE YOU TO A DIFF PAGE
+                controller.navigate(ROUTE_HOME)
             }
             else{
                 Toast.makeText(context,"${it.exception!!.message}",Toast.LENGTH_LONG).show()
+                controller.navigate(ROUTE_LOGIN)
             }
         }
     }
