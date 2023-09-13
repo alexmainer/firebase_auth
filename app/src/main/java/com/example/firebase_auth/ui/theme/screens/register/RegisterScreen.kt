@@ -1,5 +1,7 @@
 package com.example.firebase_auth.ui.theme.screens.register
 
+import androidx.compose.foundation.BorderStroke
+import androidx.compose.foundation.background
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
 import androidx.compose.foundation.layout.fillMaxSize
@@ -8,6 +10,7 @@ import androidx.compose.foundation.layout.height
 import androidx.compose.foundation.layout.padding
 import androidx.compose.foundation.text.KeyboardOptions
 import androidx.compose.material3.Button
+import androidx.compose.material3.ButtonDefaults
 import androidx.compose.material3.ExperimentalMaterial3Api
 import androidx.compose.material3.OutlinedTextField
 import androidx.compose.material3.Text
@@ -40,13 +43,14 @@ fun RegisterScreen(controller:NavHostController) {
     var confpass by remember { mutableStateOf(TextFieldValue("")) }
     val context= LocalContext.current
     Column (
-        modifier= Modifier.fillMaxSize(),
-        horizontalAlignment = Alignment.CenterHorizontally
+        modifier= Modifier.fillMaxSize().background(Color.White),
+        horizontalAlignment = Alignment.CenterHorizontally,
+
     )
     {
         Text(
-            text = "Register Here!",
-            color = Color.Cyan,
+            text = "Register",
+            color = Color(0xFFFF9800),
             fontFamily = FontFamily.Cursive,
             fontSize = 40.sp
         )
@@ -99,7 +103,7 @@ fun RegisterScreen(controller:NavHostController) {
             val myregister=AuthViewModel(controller,context)
             myregister.signup(email.text.trim(),pass.text.trim(), confpass.text.trim())
                          }
-            ,modifier = Modifier.fillMaxWidth())
+            ,colors = ButtonDefaults.buttonColors(Color.Black),)
         {
             Text(text = "Register")
 
@@ -111,9 +115,14 @@ fun RegisterScreen(controller:NavHostController) {
         Button(onClick = {
             controller.navigate(ROUTE_LOGIN)
                          },
-            modifier = Modifier.fillMaxWidth())
+            modifier = Modifier.fillMaxWidth(),
+            border = BorderStroke(0.dp, Color.Transparent), // Remove the border
+            colors = ButtonDefaults.buttonColors(Color.White)
+        )
         {
-            Text(text = "Already have an account? Click to LogIn")
+            Text(
+                text = "Already have an account? Click to LogIn",
+                color = Color(0xFFFF9800),)
 
 
         }

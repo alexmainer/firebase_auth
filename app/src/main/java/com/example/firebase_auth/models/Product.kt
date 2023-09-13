@@ -9,6 +9,8 @@ class Product {
     var price:String=""
     var id:String=""
 
+    constructor(){}
+
     constructor(name: String, quantity: String, price:String, id:String ){
         this.name=name
         this.quantity=quantity

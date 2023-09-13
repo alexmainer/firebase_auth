@@ -3,8 +3,6 @@ package com.example.firebase_auth.navigation
 //import AddProductsScreen
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
-import androidx.navigation.NavController
-import androidx.navigation.NavDestination
 import androidx.navigation.NavHostController
 import androidx.navigation.compose.NavHost
 import androidx.navigation.compose.composable
@@ -15,11 +13,10 @@ import com.example.firebase_auth.ui.theme.screens.login.LoginScreen
 import com.example.firebase_auth.ui.theme.screens.products.AddProductsScreen
 import com.example.firebase_auth.ui.theme.screens.products.UpdateProductsScreen
 import com.example.firebase_auth.ui.theme.screens.products.ViewProductsScreen
-import com.example.firebase_auth.ui.theme.screens.register.RegisterPreview
 import com.example.firebase_auth.ui.theme.screens.register.RegisterScreen
 
 @Composable
-fun AppNavHost(modifier: Modifier=Modifier,controller:NavHostController= rememberNavController(),startDestination:String= ROUTE_HOME) {
+fun AppNavHost(modifier: Modifier=Modifier,controller:NavHostController= rememberNavController(),startDestination:String= ROUTE_LOGIN) {
 
     NavHost(navController = controller, modifier=Modifier, startDestination=startDestination){
         composable(ROUTE_LOGIN){

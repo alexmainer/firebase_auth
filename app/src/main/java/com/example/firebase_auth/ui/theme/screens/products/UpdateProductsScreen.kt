@@ -1,5 +1,6 @@
 package com.example.firebase_auth.ui.theme.screens.products
 
+import android.content.res.Configuration
 import android.widget.Toast
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.Spacer
@@ -25,11 +26,14 @@ import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.text.input.KeyboardType
 import androidx.compose.ui.text.input.TextFieldValue
 import androidx.compose.ui.text.style.TextDecoration
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.firebase_auth.data.ProductViewModel
 import com.example.firebase_auth.models.Product
+import com.example.firebase_auth.ui.theme.screens.home.HomeScreen
 //import com.example.ericdatabasemmvvm.data.ProductRepository
 //import com.example.ericdatabasemmvvm.models.Product
 //import com.example.ericdatabasemmvvm.ui.theme.AugustMoringNavigationAppTheme
@@ -116,4 +120,10 @@ fun UpdateProductsScreen(controller: NavHostController,id:String) {
         }
 
     }
+}
+@Preview
+@Composable
+fun UpdateProductsScreenPreview() {
+    // Call your Composable with some sample data
+    UpdateProductsScreen(rememberNavController(), "sampleProductId")
 }

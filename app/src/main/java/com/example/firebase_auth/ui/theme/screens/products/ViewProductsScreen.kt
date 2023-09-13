@@ -18,9 +18,11 @@ import androidx.compose.ui.Modifier
 import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
 import androidx.compose.ui.text.font.FontFamily
+import androidx.compose.ui.tooling.preview.Preview
 import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import androidx.navigation.NavHostController
+import androidx.navigation.compose.rememberNavController
 import com.example.firebase_auth.data.ProductViewModel
 import com.example.firebase_auth.models.Product
 import com.example.firebase_auth.navigation.ROUTE_UPDATE_PRODUCTS
@@ -89,4 +91,11 @@ fun ProductItem(name:String, quantity:String, price:String, id:String,
             Text(text = "Update")
         }
     }
+}
+
+@Preview
+@Composable
+fun ViewProductsScreenPreview() {
+    // Call your Composable with some sample data
+    ViewProductsScreen(rememberNavController())
 }
